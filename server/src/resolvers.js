@@ -1,9 +1,9 @@
 const resolvers = {
 	Query: {
 		// Returns an array of tracks (Homepage data)
-		trackForHome: (_parent, _args, context, _info) => {
+		tracksForHome: (_parent, _args, context, _info) => {
 			const { dataSources } = context;
-			return dataSources.trackAPI.getTracks();
+			return dataSources.trackAPI.getTracksForHome();
 		},
 	},
 	Track: {
