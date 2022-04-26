@@ -4,6 +4,8 @@ const typeDefs = gql`
 	"Queries all tracks for home page"
 	type Query {
 		tracksForHome: [Track!]!
+		"Fetch a specific track, provided a track's ID"
+		track(id: ID!): Track
 	}
 
 	"""
