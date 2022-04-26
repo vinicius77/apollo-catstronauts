@@ -5,6 +5,11 @@ const resolvers = {
 			const { dataSources } = context;
 			return dataSources.trackAPI.getTracksForHome();
 		},
+		track: (_parent, args, context, _info) => {
+			const { dataSources } = context;
+			const { id } = args;
+			return dataSources.trackAPI.getTrack(id);
+		},
 	},
 	Track: {
 		// verbose for learning purposes
