@@ -1,6 +1,6 @@
 import React from 'react';
 import { QueryResult, Layout } from '../components';
-import { TrackDetail } from '../components/track-detail';
+import TrackDetail from '../components/track-detail';
 
 import { gql, useQuery } from '@apollo/client';
 
