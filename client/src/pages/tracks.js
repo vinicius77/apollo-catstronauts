@@ -4,20 +4,6 @@ import { gql, useQuery } from '@apollo/client';
 import QueryResult from '../components/query-result';
 import Track from '../containers/track-card';
 
-/** === 
-export const SPACECATS = gql`
-  query ListSpaceCats {
-    spaceCats{
-      name
-      age
-      missions{
-        name
-        description
-      }
-    }
-  }
-` === */
-
 export const TRACKS = gql`
 	query getTracks {
 		tracksForHome {
