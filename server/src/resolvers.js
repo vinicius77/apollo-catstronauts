@@ -11,6 +11,21 @@ const resolvers = {
 			return dataSources.trackAPI.getTrack(id);
 		},
 	},
+	Mutation: {
+		incrementTrackViews: async (_parent, args, context, _info) => {
+			const { id } = args;
+			const { dataSources } = context;
+
+			const track = await dataSources.trackAPI.incrementTrackViews(id);
+
+			return {
+				code: 200,
+				success: true,
+				message: `Successfully updated track views with id ${id}`,
+				track,
+			};
+		},
+	},
 	Track: {
 		// verbose for learning purposes
 		author: (parent, _args, context, _info) => {
