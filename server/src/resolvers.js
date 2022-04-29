@@ -16,14 +16,22 @@ const resolvers = {
 			const { id } = args;
 			const { dataSources } = context;
 
-			const track = await dataSources.trackAPI.incrementTrackViews(id);
-
-			return {
-				code: 200,
-				success: true,
-				message: `Successfully updated track views with id ${id}`,
-				track,
-			};
+			try {
+				const track = await dataSources.trackAPI.incrementTrackViews(id);
+				return {
+					code: 200,
+					success: true,
+					message: `Successfully updated track views with id ${id}`,
+					track,
+				};
+			} catch (error) {
+				return {
+					code: error.extensions.response.status,
+					success: false,
+					message: error.extensions.response.body,
+					track: null,
+				};
+			}
 		},
 	},
 	Track: {
