@@ -4,7 +4,10 @@ import GlobalStyles from './styles';
 import Pages from './pages';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
-const client = new ApolloClient({ uri: 'http://localhost:5001', cache: new InMemoryCache() });
+const client = new ApolloClient({
+	uri: 'https://apollo-castronauts-demo.herokuapp.com',
+	cache: new InMemoryCache(),
+});
 
 ReactDOM.render(
 	<ApolloProvider client={client}>
