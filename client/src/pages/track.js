@@ -16,13 +16,13 @@ export const GET_TRACK = gql`
 				name
 				photo
 			}
-			length
+			durationInSeconds
 			numberOfViews
 			description
 			modules {
 				id
 				title
-				length
+				durationInSeconds
 			}
 		}
 	}
